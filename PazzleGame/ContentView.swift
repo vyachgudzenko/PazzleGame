@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     var body: some View {
         ZStack{
@@ -15,8 +17,35 @@ struct ContentView: View {
                 Image(systemName: "globe")
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
-                Text("Hello, world!")
-                    .font(Font.custom("knewave", size: 30))
+                
+                
+                    
+                        Text("Hello")
+                            .font(Font.custom("knewave", size: 74))
+                            .foregroundColor(.white)
+                            .modifier(GlowBorder(color: .customLightPink, lineWidth: 15))
+                HStack(spacing:0){
+                    ZStack{
+                        Text("H")
+                            .font(Font.custom("knewave", size: 89))
+                            .foregroundColor(.customPink)
+                        Text("H")
+                            .font(Font.custom("knewave", size: 74))
+                            .foregroundColor(.white)
+                    }
+                    ZStack{
+                        Text("e")
+                            .font(Font.custom("knewave", size: 89))
+                            .foregroundColor(.customPink)
+                        Text("e")
+                            .font(Font.custom("knewave", size: 74))
+                            .foregroundColor(.white)
+                    }
+                }
+                    
+                    
+                        
+                
                     
             }
             .padding()
