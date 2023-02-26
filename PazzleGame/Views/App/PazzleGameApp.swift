@@ -11,7 +11,7 @@ import SwiftUI
 struct PazzleGameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchScreen()
         }
     }
 }
