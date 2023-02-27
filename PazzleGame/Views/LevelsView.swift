@@ -26,6 +26,7 @@ struct LevelsView: View {
                     }
                     
                 }
+                
                 Spacer()
             }
             .padding(.horizontal,20)
