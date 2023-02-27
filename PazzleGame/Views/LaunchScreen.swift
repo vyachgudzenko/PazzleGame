@@ -42,13 +42,13 @@ struct LaunchScreen: View {
             }
         }
         .onAppear {
-            /*
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: DispatchWorkItem(block: {
                 withAnimation(.linear(duration: 0.2)) {
                     self.showNextScreen = true
                 }
             }))
-            */
+            
         }
         .fullScreenCover(isPresented: $showNextScreen) {
             MainView()
