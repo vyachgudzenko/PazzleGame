@@ -9,18 +9,63 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        ZStack{
-            BackgroundImage()
-            VStack{
-                Text("Main")
-                    .font(Font.custom("knewave", size: 50))
-                    .foregroundColor(.white)
-                    .modifier(PinkButton())
-                    .frame(height: 50)
+        NavigationView {
+            ZStack{
+                BackgroundImage()
+                VStack {
+                    Image("candy")
+                        .padding(.bottom,40)
+                    VStack(spacing:16){
+                        NavigationLink {
+                            EmptyView()
+                        } label: {
+                            Text("PLAY")
+                                .font(Font.custom("knewave", size: 34))
+                                .foregroundColor(.white)
+                                .modifier(PinkButton())
+                                .frame(height: 70)
+                                
+                        }
+
+                       NavigationLink {
+                            EmptyView()
+                        } label: {
+                            Text("GAME RULES")
+                                .font(Font.custom("knewave", size: 34))
+                                .foregroundColor(.white)
+                                .modifier(PinkButton())
+                                .frame(height: 70)
+                                
+                        }
+
+                       NavigationLink {
+                            EmptyView()
+                        } label: {
+                            Text("SETTINGS")
+                                .font(Font.custom("knewave", size: 34))
+                                .foregroundColor(.white)
+                                .modifier(PinkButton())
+                                .frame(height: 70)
+                                
+                        }
+
+                       NavigationLink {
+                            EmptyView()
+                        } label: {
+                            Text("PRIVACY POLICY")
+                                .font(Font.custom("knewave", size: 34))
+                                .foregroundColor(.white)
+                                .modifier(PinkButton())
+                                .frame(height: 70)
+                                
+                        }
+
+                        
+                        
+                            
+                    }
                     .padding(.horizontal,20)
-                
-                
-                    
+                }
             }
         }
     }
