@@ -13,6 +13,10 @@ struct MainView: View {
             BackgroundImage()
             Text("Main")
                 .font(Font.custom("knewave", size: 50))
+                .foregroundColor(.white)
+                .modifier(PinkButton())
+                .frame(height: 50)
+                .padding(.horizontal,20)
         }
     }
 }
