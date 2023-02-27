@@ -18,11 +18,6 @@ struct PinkButton: ViewModifier {
                 ))
             content
         }
-        
-        
-            
-            
-        
     }
 }
 

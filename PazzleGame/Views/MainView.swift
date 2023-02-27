@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var levelVM = LevelViewModel()
     var body: some View {
         NavigationView {
             ZStack{
@@ -18,6 +19,7 @@ struct MainView: View {
                     VStack(spacing:16){
                         NavigationLink {
                             LevelsView()
+                                .environmentObject(levelVM)
                         } label: {
                             Text("PLAY")
                                 .font(Font.custom("knewave", size: 34))
@@ -38,7 +40,7 @@ struct MainView: View {
                         }
 
                        NavigationLink {
-                            EmptyView()
+                            SettingsView()
                         } label: {
                             Text("SETTINGS")
                                 .font(Font.custom("knewave", size: 34))
@@ -56,12 +58,7 @@ struct MainView: View {
                                 .foregroundColor(.white)
                                 .modifier(PinkButton())
                                 .frame(height: 70)
-                                
                         }
-
-                        
-                        
-                            
                     }
                     .padding(.horizontal,20)
                 }

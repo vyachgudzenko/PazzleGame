@@ -25,6 +25,10 @@
 		3E3B770829AC517200A65042 /* LevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B770729AC517200A65042 /* LevelsView.swift */; };
 		3E3B770A29AC573200A65042 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B770929AC573200A65042 /* SettingsView.swift */; };
 		3E67F1DE29AD0F93003AF464 /* CandyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1DD29AD0F93003AF464 /* CandyFrame.swift */; };
+		3E67F1E129AD146E003AF464 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1E029AD146E003AF464 /* Level.swift */; };
+		3E67F1E329AD1580003AF464 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1E229AD1580003AF464 /* LevelViewModel.swift */; };
+		3E67F1E629AD30DA003AF464 /* LevelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1E529AD30DA003AF464 /* LevelRow.swift */; };
+		3E67F1E829AD3CCD003AF464 /* StrokedCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1E729AD3CCD003AF464 /* StrokedCircle.swift */; };
 		5559ACAF49B7A94F649F37B9 /* Pods_PazzleGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37549B68007C95112F9EA491 /* Pods_PazzleGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,10 @@
 		3E3B770729AC517200A65042 /* LevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsView.swift; sourceTree = "<group>"; };
 		3E3B770929AC573200A65042 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3E67F1DD29AD0F93003AF464 /* CandyFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyFrame.swift; sourceTree = "<group>"; };
+		3E67F1E029AD146E003AF464 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		3E67F1E229AD1580003AF464 /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
+		3E67F1E529AD30DA003AF464 /* LevelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelRow.swift; sourceTree = "<group>"; };
+		3E67F1E729AD3CCD003AF464 /* StrokedCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedCircle.swift; sourceTree = "<group>"; };
 		B8F5D12379D67184FC057E9B /* Pods-PazzleGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazzleGame.debug.xcconfig"; path = "Target Support Files/Pods-PazzleGame/Pods-PazzleGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,11 +120,11 @@
 		3E35ACC029AAD5AE006C5F80 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3E67F1E429AD30B4003AF464 /* LevelGroup */,
 				3E35ACC429AADB27006C5F80 /* App */,
 				3E35ACD229AAEBA3006C5F80 /* LaunchScreen.swift */,
 				3E35ACD429AAEC1D006C5F80 /* MainView.swift */,
 				3E3B770529AC4D3300A65042 /* GamesRulesView.swift */,
-				3E3B770729AC517200A65042 /* LevelsView.swift */,
 				3E3B770929AC573200A65042 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -125,6 +133,7 @@
 		3E35ACC129AAD5BD006C5F80 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3E67F1E229AD1580003AF464 /* LevelViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -132,6 +141,7 @@
 		3E35ACC229AAD5C9006C5F80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3E67F1E029AD146E003AF464 /* Level.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +186,7 @@
 				3E35ACDC29AAF8DC006C5F80 /* GlowBorder.swift */,
 				3E35ACDE29AAFAD4006C5F80 /* KnewaveFont.swift */,
 				3E3B76FF29AC37B700A65042 /* PinkButton.swift */,
+				3E67F1E729AD3CCD003AF464 /* StrokedCircle.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -190,13 +201,21 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		3E67F1E429AD30B4003AF464 /* LevelGroup */ = {
+			isa = PBXGroup;
+			children = (
+				3E3B770729AC517200A65042 /* LevelsView.swift */,
+				3E67F1E529AD30DA003AF464 /* LevelRow.swift */,
+			);
+			path = LevelGroup;
+			sourceTree = "<group>";
+		};
 		54FBEF89E4DA05837BB34A54 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				B8F5D12379D67184FC057E9B /* Pods-PazzleGame.debug.xcconfig */,
 				27E7DA204D2C964DD0C137D9 /* Pods-PazzleGame.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -328,15 +347,19 @@
 				3E3B770029AC37B700A65042 /* PinkButton.swift in Sources */,
 				3E35ACD329AAEBA3006C5F80 /* LaunchScreen.swift in Sources */,
 				3E35ACD129AAEB3C006C5F80 /* BackgroundImage.swift in Sources */,
+				3E67F1E629AD30DA003AF464 /* LevelRow.swift in Sources */,
 				3E35ACDD29AAF8DC006C5F80 /* GlowBorder.swift in Sources */,
 				3E67F1DE29AD0F93003AF464 /* CandyFrame.swift in Sources */,
 				3E3B770829AC517200A65042 /* LevelsView.swift in Sources */,
 				3E3B770A29AC573200A65042 /* SettingsView.swift in Sources */,
 				3E35ACD929AAF180006C5F80 /* Color.swift in Sources */,
+				3E67F1E329AD1580003AF464 /* LevelViewModel.swift in Sources */,
 				3E35ACB529AAD552006C5F80 /* ContentView.swift in Sources */,
 				3E35ACD529AAEC1D006C5F80 /* MainView.swift in Sources */,
+				3E67F1E829AD3CCD003AF464 /* StrokedCircle.swift in Sources */,
 				3E35ACDF29AAFAD4006C5F80 /* KnewaveFont.swift in Sources */,
 				3E3B770629AC4D3300A65042 /* GamesRulesView.swift in Sources */,
+				3E67F1E129AD146E003AF464 /* Level.swift in Sources */,
 				3E35ACB329AAD552006C5F80 /* PazzleGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
