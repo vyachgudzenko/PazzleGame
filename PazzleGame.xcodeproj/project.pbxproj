@@ -21,6 +21,9 @@
 		3E35ACDF29AAFAD4006C5F80 /* KnewaveFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35ACDE29AAFAD4006C5F80 /* KnewaveFont.swift */; };
 		3E3B770029AC37B700A65042 /* PinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B76FF29AC37B700A65042 /* PinkButton.swift */; };
 		3E3B770429AC471C00A65042 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B770329AC471C00A65042 /* CustomNavBar.swift */; };
+		3E3B770629AC4D3300A65042 /* GamesRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B770529AC4D3300A65042 /* GamesRulesView.swift */; };
+		3E3B770829AC517200A65042 /* LevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B770729AC517200A65042 /* LevelsView.swift */; };
+		3E3B770A29AC573200A65042 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3B770929AC573200A65042 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		3E35ACDE29AAFAD4006C5F80 /* KnewaveFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnewaveFont.swift; sourceTree = "<group>"; };
 		3E3B76FF29AC37B700A65042 /* PinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkButton.swift; sourceTree = "<group>"; };
 		3E3B770329AC471C00A65042 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		3E3B770529AC4D3300A65042 /* GamesRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesRulesView.swift; sourceTree = "<group>"; };
+		3E3B770729AC517200A65042 /* LevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsView.swift; sourceTree = "<group>"; };
+		3E3B770929AC573200A65042 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 				3E35ACC429AADB27006C5F80 /* App */,
 				3E35ACD229AAEBA3006C5F80 /* LaunchScreen.swift */,
 				3E35ACD429AAEC1D006C5F80 /* MainView.swift */,
+				3E3B770529AC4D3300A65042 /* GamesRulesView.swift */,
+				3E3B770729AC517200A65042 /* LevelsView.swift */,
+				3E3B770929AC573200A65042 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,10 +257,13 @@
 				3E35ACD329AAEBA3006C5F80 /* LaunchScreen.swift in Sources */,
 				3E35ACD129AAEB3C006C5F80 /* BackgroundImage.swift in Sources */,
 				3E35ACDD29AAF8DC006C5F80 /* GlowBorder.swift in Sources */,
+				3E3B770829AC517200A65042 /* LevelsView.swift in Sources */,
+				3E3B770A29AC573200A65042 /* SettingsView.swift in Sources */,
 				3E35ACD929AAF180006C5F80 /* Color.swift in Sources */,
 				3E35ACB529AAD552006C5F80 /* ContentView.swift in Sources */,
 				3E35ACD529AAEC1D006C5F80 /* MainView.swift in Sources */,
 				3E35ACDF29AAFAD4006C5F80 /* KnewaveFont.swift in Sources */,
+				3E3B770629AC4D3300A65042 /* GamesRulesView.swift in Sources */,
 				3E35ACB329AAD552006C5F80 /* PazzleGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

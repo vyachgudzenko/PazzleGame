@@ -17,18 +17,17 @@ struct MainView: View {
                         .padding(.bottom,40)
                     VStack(spacing:16){
                         NavigationLink {
-                            EmptyView()
+                            LevelsView()
                         } label: {
                             Text("PLAY")
                                 .font(Font.custom("knewave", size: 34))
                                 .foregroundColor(.white)
                                 .modifier(PinkButton())
                                 .frame(height: 70)
-                                
                         }
 
                        NavigationLink {
-                            EmptyView()
+                            GamesRulesView()
                         } label: {
                             Text("GAME RULES")
                                 .font(Font.custom("knewave", size: 34))

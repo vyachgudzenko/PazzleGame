@@ -29,15 +29,16 @@ struct LaunchScreen: View {
                 }
                 .foregroundColor(.white)
                 .modifier(KnewaveFont(size: 74))
+                 
+                
                  Spacer()
                 
                     Text("Loading...")
                         .foregroundColor(.white)
                         .modifier(KnewaveFont(size: 34))
                         .modifier(GlowBorder( lineWidth: 15))
-                    
-                Spacer()
-                    .frame(height: 60)
+                        .padding(.bottom,60)
+                
                 
             }
         }

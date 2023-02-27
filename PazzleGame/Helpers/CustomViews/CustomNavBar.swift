@@ -39,14 +39,14 @@ struct CustomNavBar<NavBarItem:View>: View {
                 .frame(width: backButtonSize,height: backButtonSize)
                 
             }
-            Spacer()
+            
             navBarItem
+                .padding(.leading,20)
             Spacer()
 
         }
-        
-        .padding(.horizontal,20)
         .frame(height: 72)
+        .padding(.top,70)
         
     }
 }
@@ -59,7 +59,7 @@ struct CustomNavBar_Previews: PreviewProvider {
                 print("its working")
             } navBarItem: {
                 Text("Test")
-                    .modifier(GlowBorder(lineWidth: 5))
+                   // .modifier(GlowBorder(lineWidth: 5))
                     .modifier(KnewaveFont(size: 34))
                     .foregroundColor(.white)
             }
