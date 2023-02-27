@@ -10,9 +10,9 @@ import SwiftUI
 struct PinkButton: ViewModifier {
     func body(content: Content) -> some View {
         ZStack(alignment:.center){
-            Capsule()
+            RoundedRectangle(cornerRadius: 25)
                 .fill(LinearGradient.pinkGradient)
-            Capsule()
+            RoundedRectangle(cornerRadius: 25)
                 .stroke(Color.white, style: StrokeStyle(
                     lineWidth: 5
                 ))

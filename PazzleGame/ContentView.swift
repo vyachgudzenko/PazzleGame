@@ -23,7 +23,7 @@ struct ContentView: View {
                         Text("Hello")
                             .font(Font.custom("knewave", size: 74))
                             .foregroundColor(.white)
-                            .modifier(GlowBorder(color: .customLightPink, lineWidth: 15))
+                            .modifier(GlowBorder( lineWidth: 15))
                 HStack(spacing:0){
                     ZStack{
                         Text("H")

@@ -11,12 +11,17 @@ struct MainView: View {
     var body: some View {
         ZStack{
             BackgroundImage()
-            Text("Main")
-                .font(Font.custom("knewave", size: 50))
-                .foregroundColor(.white)
-                .modifier(PinkButton())
-                .frame(height: 50)
-                .padding(.horizontal,20)
+            VStack{
+                Text("Main")
+                    .font(Font.custom("knewave", size: 50))
+                    .foregroundColor(.white)
+                    .modifier(PinkButton())
+                    .frame(height: 50)
+                    .padding(.horizontal,20)
+                
+                
+                    
+            }
         }
     }
 }
