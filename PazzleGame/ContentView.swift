@@ -10,48 +10,67 @@ import SwiftUI
 
 
 struct ContentView: View {
+    @State var size:CGSize = CGSize(width: 0, height: 0)
+    @State var cropSize:CGSize = CGSize(width: 0, height: 0)
+    @State var cgImage:CGImage? = nil
+    @State var imageArr:[CGImage] = []
     var body: some View {
         ZStack{
             BackgroundImage()
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                
-                
-                    
-                        Text("Hello")
-                            .font(Font.custom("knewave", size: 74))
+            
+                VStack {
+                    let grids:[GridItem] = [
+                        GridItem(.fixed(85),spacing: 0),
+                        GridItem(.fixed(85),spacing: 0),
+                        GridItem(.fixed(85),spacing: 0),
+                        GridItem(.fixed(85),spacing: 0)
+                    ]
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 70)
                             .foregroundColor(.white)
-                            .modifier(GlowBorder( lineWidth: 15))
-                HStack(spacing:0){
-                    ZStack{
-                        Text("H")
-                            .font(Font.custom("knewave", size: 89))
-                            .foregroundColor(.customPink)
-                        Text("H")
-                            .font(Font.custom("knewave", size: 74))
-                            .foregroundColor(.white)
-                    }
-                    ZStack{
-                        Text("e")
-                            .font(Font.custom("knewave", size: 89))
-                            .foregroundColor(.customPink)
-                        Text("e")
-                            .font(Font.custom("knewave", size: 74))
-                            .foregroundColor(.white)
+                            .frame(width: 330,height: 330
+                            )
+                        
+                        LazyVGrid(columns: grids,spacing: 0) {
+                            ForEach(imageArr, id: \.hashValue) {
+                                image in
+                                Image(uiImage: UIImage(cgImage: image))
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 85,height: 85)
+                            }
+                        }
+                        CandyFrame()
+                            
+                            .frame(width: 340,height: 340)
                     }
                 }
-                    
-                    
-                        
-                
-                    
-            }
-            .padding()
+            
+            
+        }
+        .onAppear {
+            getImage(name: "testImage")
         }
         
+        
     }
+    
+    private func getImage(name:String){
+        let uiImage = UIImage(named: name)!
+        
+        for row in 0...3{
+            for col in 0...3{
+                let crop = CGRect(x: (uiImage.size.width / 4) * CGFloat(col), y: (uiImage.size.height / 4) * CGFloat(row), width: uiImage.size.width / 4, height: uiImage.size.height / 4)
+                if let croppedImage:CGImage = uiImage.cgImage?.cropping(to: crop) {
+                    imageArr.append(croppedImage)
+                }
+            }
+        }
+        
+        
+    }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

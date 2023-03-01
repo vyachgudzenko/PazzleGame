@@ -36,7 +36,7 @@ struct LevelRow: View {
                         .foregroundColor(.white)
                         .modifier(KnewaveFont(size: 15))
                         .modifier(GlowBorder(lineWidth: 4))
-                        .modifier(StrokedCircle())
+                        .modifier(StrokedCircle(lineWidth: 2))
                         .frame(width: 24,height: 24)
                         .offset(x:-5,y: -2)
                 }

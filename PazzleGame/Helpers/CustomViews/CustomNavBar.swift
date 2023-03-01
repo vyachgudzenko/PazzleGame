@@ -23,20 +23,14 @@ struct CustomNavBar<NavBarItem:View>: View {
             Button {
                 dismissAction()
             } label: {
-                ZStack{
-                    Circle()
-                        .fill(Color.white)
-                    Circle()
-                        .stroke(LinearGradient.pinkGradient, style: StrokeStyle(
-                            lineWidth: 5
-                        ))
+                
                     Image("backButton")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: backButtonSize * 0.62)
-                        .offset(x:-2)
-                }
-                .frame(width: backButtonSize,height: backButtonSize)
+                        .modifier(StrokedCircle(lineWidth: 5))
+                        //.offset(x:-2)
+                        .frame(width: backButtonSize,height: backButtonSize)
                 
             }
             

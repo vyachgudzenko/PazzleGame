@@ -10,6 +10,7 @@ import RealmSwift
 
 class LevelViewModel:ObservableObject{
     @Published var levels:[Level] = []
+    @Published var currentLevel:Level? = nil
     
     init(){
         getLevels()
@@ -30,7 +31,7 @@ class LevelViewModel:ObservableObject{
             newLevel.executionTime = executionTime
             executionTime -= 5
             newLevel.number = level
-            newLevel.image = "previewLevel\(level)"
+            newLevel.image = "level\(level)"
             if level == 1{
                 newLevel.isLocked = false
             }
@@ -44,6 +45,17 @@ class LevelViewModel:ObservableObject{
             let realm = try Realm()
             try realm.write({
                 realm.add(object)
+            })
+        } catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    func unblockLevel(level:Level){
+        do{
+            let realm = try Realm()
+            try realm.write({
+                level.isLocked = false
             })
         } catch{
             print(error.localizedDescription)

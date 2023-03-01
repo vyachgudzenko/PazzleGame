@@ -10,6 +10,8 @@ import SwiftUI
 struct LevelsView: View {
     @EnvironmentObject var levelVM:LevelViewModel
     @Environment(\.dismiss) private var dismiss
+    @State private var goToGameView:Bool = false
+    @State private var currentLevel:Level? = nil
     var body: some View {
         ZStack{
             BackgroundImage()
@@ -33,10 +35,26 @@ struct LevelsView: View {
                     GridItem(.flexible()),
                     GridItem(.flexible())
                 ]
+                
+                    NavigationLink(isActive: $goToGameView) {
+                        GameView()
+                            .environmentObject(levelVM)
+                    } label: {
+                        EmptyView()
+                    }
+                
+
+                
                 LazyVGrid(columns: grids) {
                     ForEach(levelVM.levels, id: \.id) {
                         level in
                         LevelRow(level: level)
+                            .onTapGesture {
+                                if !level.isLocked{
+                                    levelVM.currentLevel = level
+                                    goToGameView = true
+                                }
+                            }
                     }
                 }
                 

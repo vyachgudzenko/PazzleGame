@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct StrokedCircle: ViewModifier {
+    let lineWidth:CGFloat
+    var isDisabled:Bool? = nil
     func body(content: Content) -> some View {
         ZStack(alignment:.center){
             Circle()
                 .fill(.white)
-            Circle()
-                .stroke(LinearGradient.pinkGradient, style: StrokeStyle(
-                    lineWidth: 2
-                ))
+            if isDisabled != nil && isDisabled == true{
+                Circle()
+                    .stroke(Color.gray, style: StrokeStyle(
+                        lineWidth: lineWidth
+                    ))
+            } else {
+                Circle()
+                    .stroke(LinearGradient.pinkGradient, style: StrokeStyle(
+                        lineWidth: lineWidth
+                    ))
+            }
             content
         }
     }
