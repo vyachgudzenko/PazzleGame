@@ -29,7 +29,7 @@ class Level:Object,ObjectKeyIdentifiable{
     }
     
     func setBestTime(newTime:Int){
-        if newTime > self.bestTime{
+        if newTime < self.bestTime{
             do{
                let realm = try Realm()
                 try realm.write({

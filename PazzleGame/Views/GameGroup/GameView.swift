@@ -18,6 +18,7 @@ struct GameView: View {
             BackgroundImage()
             VStack{
                 CustomNavBar(backButtonSize: 35) {
+                    gameVM.resetTimer()
                     dismiss()
                 } navBarItem: {
                     HStack{
@@ -44,25 +45,19 @@ struct GameView: View {
                             .modifier(KnewaveFont(size: 24))
                             .foregroundColor(.white)
                             .modifier(GlowBorder(lineWidth: 8))
-                        //.padding(.horizontal)
                             .modifier(StrokedWhiteLabel())
                             .frame(width: 100,height: 35)
                         
                     }
                 }
                 .padding(.bottom,40)
-                ZStack{
-                    RoundedRectangle(cornerRadius: 70)
-                        .foregroundColor(.white)
-                        .frame(width: 330,height: 330)
+                PlayingField()
+                    .frame(width: 315,height: 315)
+                    .environmentObject(gameVM)
+                    .clipShape(RoundedRectangle(cornerRadius: 68))
+                    .padding(.bottom,32)
                     
-                    CandyFrame()
-                        .frame(width: 350,height: 350)
-                    PlayingField()
-                        .frame(width: 315,height: 315)
-                        .environmentObject(gameVM)
-                }
-                .padding(.bottom,32)
+                
                 ZStack{
                     Image(levelVM.currentLevel!.image)
                         .resizable()
@@ -75,7 +70,9 @@ struct GameView: View {
             }
             .padding(.horizontal,20)
             .onChange(of: gameVM.gameStatus) { newValue in
-                showPopUp = true
+                if newValue != .inProgress{
+                    showPopUp = true
+                }
                 if newValue == .win{
                     levelVM.unblockNextLevel()
                     levelVM.getLevels()
@@ -89,7 +86,6 @@ struct GameView: View {
         }
         .onAppear(perform: {
             gameVM.loadLevel(level: levelVM.currentLevel!)
-            gameVM.createTimer()
         })
         .navigationBarHidden(true)
         
@@ -136,7 +132,7 @@ struct GameView: View {
                         .modifier(StrokedWhiteLabel())
                         .frame(width: size.width - 40,height: 60)
                     if gameVM.gameStatus == .win {
-                        Text("BEST TIME:  " + gameVM.level!.bestTime.timeLeft )
+                        Text("BEST TIME:  " +  (gameVM.level!.bestTime > 0 ? gameVM.level!.bestTime.timeLeft : gameVM.finalTime.timeLeft))
                             .modifier(KnewaveFont(size: 34))
                             .foregroundColor(.white)
                             .modifier(GlowBorder(lineWidth: 8))
@@ -172,9 +168,14 @@ struct GameView: View {
                     }
                     
                     Button {
-                        levelVM.loadNextLevel()
-                        gameVM.loadLevel(level: levelVM.currentLevel!)
-                        showPopUp = false
+                        if levelVM.currentLevel!.number < levelVM.levels.count{
+                            levelVM.loadNextLevel()
+                            gameVM.loadLevel(level: levelVM.currentLevel!)
+                            gameVM.gameStatus = .inProgress
+                            showPopUp = false
+                        } else {
+                            dismiss()
+                        }
                     } label: {
                         Image(gameVM.gameStatus == .win ? "backButton" : "backButtonDisabled")
                             .resizable()

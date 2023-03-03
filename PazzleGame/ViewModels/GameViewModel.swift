@@ -34,11 +34,15 @@ class GameViewModel: ObservableObject{
         self.level = level
         time = level.executionTime
         createPartsOfImage()
-        createTimer()
+        if timer != nil {
+            value = 0
+        } else {
+            createTimer()
+        }
     }
     
     func createTimer(){
-        timer = nil
+        
         timer = Timer(timeInterval: 1, target: self, selector: #selector(changeTimer), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: .common)
         timer.fire()
@@ -113,6 +117,7 @@ class GameViewModel: ObservableObject{
         } else {
             createTimer()
         }
+        gameStatus = .inProgress
     }
     
 }

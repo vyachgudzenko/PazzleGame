@@ -9,13 +9,15 @@ import SwiftUI
 
 struct PlayingField: View {
     @EnvironmentObject var gameVM:GameViewModel
-    @State var width:CGFloat = 0
+    @State var width:CGFloat = 72
     @State private var startLocation:CGPoint = CGPoint(x: 0, y: 0)
     @State private var endLocation:CGPoint = CGPoint(x: 0, y: 0)
     
     var body: some View {
-        GeometryReader { geo in
-            
+        ZStack{
+            RoundedRectangle(cornerRadius: 50)
+                .foregroundColor(.white)
+                .frame(width: 300,height: 300)
             ZStack(alignment:.center){
                 
                 ForEach(gameVM.partsOfImage, id: \.hashValue) {
@@ -27,30 +29,32 @@ struct PlayingField: View {
                         .position(getPosition(item: part))
                         .animation(.linear)
                 }
-                
             }
-            .coordinateSpace(name: "board")
-            .gesture(
-                DragGesture(coordinateSpace: .named("board"))
-                
-                    .onEnded({ gesture in
-                        startLocation = gesture.startLocation
-                        endLocation = gesture.location
-                    })
-            )
-            .onChange(of: startLocation, perform: { newValue in
-                gameVM.startIndex = findPartByPosition(location: newValue)
-            })
-            .onChange(of: endLocation, perform: { newValue in
-                gameVM.endIndex = findPartByPosition(location: newValue)
-                gameVM.replaced()
-            })
-            .frame(width: geo.size.width,height: geo.size.width)
-            .onAppear {
-                width  = geo.size.width / 4
-            }
-            //.offset(y:100)
+            .offset(x:2.2)
+            CandyFrame()
+                .frame(width: 320,height: 320)
         }
+        
+        .coordinateSpace(name: "board")
+        .gesture(
+            DragGesture(coordinateSpace: .named("board"))
+            
+                .onEnded({ gesture in
+                    startLocation = gesture.startLocation
+                    endLocation = gesture.location
+                })
+        )
+        .onChange(of: startLocation, perform: { newValue in
+            gameVM.startIndex = findPartByPosition(location: newValue)
+        })
+        .onChange(of: endLocation, perform: { newValue in
+            gameVM.endIndex = findPartByPosition(location: newValue)
+            gameVM.replaced()
+        })
+        //.frame(width: geo.size.width,height: geo.size.width)
+        
+        //.offset(y:100)
+        
     }
     
     private func findPartByPosition(location:CGPoint) -> Int{
@@ -83,7 +87,7 @@ struct PlayingField: View {
         }
         return position
     }
-
+    
 }
 
 struct PlayingField_Previews: PreviewProvider {
