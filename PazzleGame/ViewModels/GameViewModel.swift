@@ -7,11 +7,22 @@
 
 import SwiftUI
 
+enum GameStatus:String{
+    case win = "levelCompleted"
+    case lose = "levelFailed"
+    case inProgress = "inProgress"
+}
+
 class GameViewModel: ObservableObject{
-    @Published var gameIsWin:Bool = false
-    @Published var gameIsLose:Bool = false
-    var level:Level? = nil
+    //@Published var gameIsWin:Bool = false
+    //@Published var gameIsLose:Bool = false
+    @Published var partsOfImage:[CGImage] = []
+    @Published var startIndex:Int? = nil
+    @Published var endIndex:Int? = nil
+    @Published var gameStatus:GameStatus = .inProgress
     @Published var value:Int = 0
+    var standartParts:[CGImage] = []
+    var level:Level? = nil
     var time:Int = 0
     var timer:Timer!
     var timerIsEnd:Bool = false
@@ -23,6 +34,7 @@ class GameViewModel: ObservableObject{
     func loadLevel(level:Level){
         self.level = level
         time = level.executionTime
+        createPartsOfImage()
     }
     
     func createTimer(){
@@ -37,16 +49,52 @@ class GameViewModel: ObservableObject{
         print(value)
         if self.countdown <= 0{
             timerIsEnd = true
-            gameIsLose = true
+            gameStatus = .lose
             resetTimer()
         }
     }
     
     func resetTimer(){
-        timer.invalidate()
+        if timer != nil {
+            timer.invalidate()
+        }
         timer = nil
         value = 0
     }
     
+    func gameLosed(){
+        timerIsEnd = true
+        gameStatus = .lose
+        resetTimer()
+    }
+    
+    func createPartsOfImage(){
+        guard let uiImage = UIImage(named: level!.image) else { return }
+        for row in 0...3{
+            for col in 0...3{
+                let crop = CGRect(x: (uiImage.size.width / 4) * CGFloat(col), y: (uiImage.size.height / 4) * CGFloat(row), width: uiImage.size.width / 4, height: uiImage.size.height / 4)
+                if let croppedImage:CGImage = uiImage.cgImage?.cropping(to: crop) {
+                    standartParts.append(croppedImage)
+                }
+            }
+        }
+        partsOfImage = standartParts.shuffled()
+    }
+    
+    func replaced(){
+        if startIndex != nil && endIndex != nil{
+            
+            if startIndex! <= partsOfImage.count - 1 && endIndex! <= partsOfImage.count - 1{
+                partsOfImage.swapAt(startIndex!, endIndex!)
+            }
+        }
+        checkCoincidence()
+    }
+    
+    func checkCoincidence(){
+        if standartParts == partsOfImage{
+            gameStatus = .win
+        }
+    }
     
 }

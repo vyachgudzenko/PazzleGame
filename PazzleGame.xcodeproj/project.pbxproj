@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E2DE87429AED41C008366B0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DE87329AED41C008366B0 /* Int.swift */; };
 		3E2DE87629AED76C008366B0 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DE87529AED76C008366B0 /* GameViewModel.swift */; };
-		3E2DE87829AEDF19008366B0 /* GamePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DE87729AEDF19008366B0 /* GamePopUp.swift */; };
+		3E2F5A6129B0433F00520EB3 /* PlayingField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F5A6029B0433F00520EB3 /* PlayingField.swift */; };
 		3E35ACB329AAD552006C5F80 /* PazzleGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35ACB229AAD552006C5F80 /* PazzleGameApp.swift */; };
 		3E35ACB529AAD552006C5F80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35ACB429AAD552006C5F80 /* ContentView.swift */; };
 		3E35ACB729AAD554006C5F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E35ACB629AAD554006C5F80 /* Assets.xcassets */; };
@@ -34,13 +34,15 @@
 		3E67F1E829AD3CCD003AF464 /* StrokedCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1E729AD3CCD003AF464 /* StrokedCircle.swift */; };
 		3E67F1EA29AD8FE8003AF464 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1E929AD8FE8003AF464 /* GameView.swift */; };
 		3E67F1EC29AD92CE003AF464 /* StrokedWhiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1EB29AD92CE003AF464 /* StrokedWhiteLabel.swift */; };
-		D031FFA3806C5EED13D30346 /* Pods_PazzleGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A28A4556FDA08ECE5E7772 /* Pods_PazzleGame.framework */; };
+		3E77DA7529B17F0200E33CE3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E77DA7429B17F0200E33CE3 /* TestView.swift */; };
+		D7C96843BB121264D5049D78 /* Pods_PazzleGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB043BA82501C6A0C5C41DB /* Pods_PazzleGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EB043BA82501C6A0C5C41DB /* Pods_PazzleGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazzleGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2DE87329AED41C008366B0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		3E2DE87529AED76C008366B0 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		3E2DE87729AEDF19008366B0 /* GamePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePopUp.swift; sourceTree = "<group>"; };
+		3E2F5A6029B0433F00520EB3 /* PlayingField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingField.swift; sourceTree = "<group>"; };
 		3E35ACAF29AAD552006C5F80 /* PazzleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PazzleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E35ACB229AAD552006C5F80 /* PazzleGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazzleGameApp.swift; sourceTree = "<group>"; };
 		3E35ACB429AAD552006C5F80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,9 +69,9 @@
 		3E67F1E729AD3CCD003AF464 /* StrokedCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedCircle.swift; sourceTree = "<group>"; };
 		3E67F1E929AD8FE8003AF464 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		3E67F1EB29AD92CE003AF464 /* StrokedWhiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedWhiteLabel.swift; sourceTree = "<group>"; };
-		BEFBFA05EC0256B71385498D /* Pods-PazzleGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazzleGame.release.xcconfig"; path = "Target Support Files/Pods-PazzleGame/Pods-PazzleGame.release.xcconfig"; sourceTree = "<group>"; };
-		BFA8D2C0750C183191AE8662 /* Pods-PazzleGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazzleGame.debug.xcconfig"; path = "Target Support Files/Pods-PazzleGame/Pods-PazzleGame.debug.xcconfig"; sourceTree = "<group>"; };
-		E8A28A4556FDA08ECE5E7772 /* Pods_PazzleGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PazzleGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E77DA7429B17F0200E33CE3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		429ACAB93B58EF1E1846FF9D /* Pods-PazzleGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazzleGame.release.xcconfig"; path = "Target Support Files/Pods-PazzleGame/Pods-PazzleGame.release.xcconfig"; sourceTree = "<group>"; };
+		A78939E1522B11EBD56339AA /* Pods-PazzleGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazzleGame.debug.xcconfig"; path = "Target Support Files/Pods-PazzleGame/Pods-PazzleGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,19 +79,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D031FFA3806C5EED13D30346 /* Pods_PazzleGame.framework in Frameworks */,
+				D7C96843BB121264D5049D78 /* Pods_PazzleGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A1C7786A2A7AD941CC94686 /* Frameworks */ = {
+		39C618FACEFD35ED03234E1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E8A28A4556FDA08ECE5E7772 /* Pods_PazzleGame.framework */,
+				1EB043BA82501C6A0C5C41DB /* Pods_PazzleGame.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E2F5A5F29B041A700520EB3 /* GameGroup */ = {
+			isa = PBXGroup;
+			children = (
+				3E67F1E929AD8FE8003AF464 /* GameView.swift */,
+				3E2F5A6029B0433F00520EB3 /* PlayingField.swift */,
+			);
+			path = GameGroup;
 			sourceTree = "<group>";
 		};
 		3E35ACA629AAD552006C5F80 = {
@@ -98,7 +109,7 @@
 				3E35ACB129AAD552006C5F80 /* PazzleGame */,
 				3E35ACB029AAD552006C5F80 /* Products */,
 				54FBEF89E4DA05837BB34A54 /* Pods */,
-				3A1C7786A2A7AD941CC94686 /* Frameworks */,
+				39C618FACEFD35ED03234E1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,7 +131,6 @@
 				3E35ACC229AAD5C9006C5F80 /* Models */,
 				3E35ACC129AAD5BD006C5F80 /* ViewModels */,
 				3E35ACC029AAD5AE006C5F80 /* Views */,
-				3E35ACB429AAD552006C5F80 /* ContentView.swift */,
 				3E35ACB629AAD554006C5F80 /* Assets.xcassets */,
 				3E35ACB829AAD554006C5F80 /* Preview Content */,
 			);
@@ -138,13 +148,13 @@
 		3E35ACC029AAD5AE006C5F80 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3E2F5A5F29B041A700520EB3 /* GameGroup */,
 				3E67F1E429AD30B4003AF464 /* LevelGroup */,
 				3E35ACC429AADB27006C5F80 /* App */,
 				3E35ACD229AAEBA3006C5F80 /* LaunchScreen.swift */,
 				3E35ACD429AAEC1D006C5F80 /* MainView.swift */,
 				3E3B770529AC4D3300A65042 /* GamesRulesView.swift */,
 				3E3B770929AC573200A65042 /* SettingsView.swift */,
-				3E67F1E929AD8FE8003AF464 /* GameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				3E35ACB229AAD552006C5F80 /* PazzleGameApp.swift */,
+				3E35ACB429AAD552006C5F80 /* ContentView.swift */,
+				3E77DA7429B17F0200E33CE3 /* TestView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -219,7 +231,6 @@
 				3E35ACD029AAEB3C006C5F80 /* BackgroundImage.swift */,
 				3E3B770329AC471C00A65042 /* CustomNavBar.swift */,
 				3E67F1DD29AD0F93003AF464 /* CandyFrame.swift */,
-				3E2DE87729AEDF19008366B0 /* GamePopUp.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -236,8 +247,8 @@
 		54FBEF89E4DA05837BB34A54 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BFA8D2C0750C183191AE8662 /* Pods-PazzleGame.debug.xcconfig */,
-				BEFBFA05EC0256B71385498D /* Pods-PazzleGame.release.xcconfig */,
+				A78939E1522B11EBD56339AA /* Pods-PazzleGame.debug.xcconfig */,
+				429ACAB93B58EF1E1846FF9D /* Pods-PazzleGame.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -249,11 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E35ACBD29AAD554006C5F80 /* Build configuration list for PBXNativeTarget "PazzleGame" */;
 			buildPhases = (
-				97E1E37881C2760B0A2DBE16 /* [CP] Check Pods Manifest.lock */,
+				12EE1A7357D56DB8830AAD76 /* [CP] Check Pods Manifest.lock */,
 				3E35ACAB29AAD552006C5F80 /* Sources */,
 				3E35ACAC29AAD552006C5F80 /* Frameworks */,
 				3E35ACAD29AAD552006C5F80 /* Resources */,
-				BE782570BBE2DB66EDBF5804 /* [CP] Embed Pods Frameworks */,
+				DE22E39B645E478475A9EFFD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,7 +322,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		97E1E37881C2760B0A2DBE16 /* [CP] Check Pods Manifest.lock */ = {
+		12EE1A7357D56DB8830AAD76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,7 +344,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE782570BBE2DB66EDBF5804 /* [CP] Embed Pods Frameworks */ = {
+		DE22E39B645E478475A9EFFD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,7 +368,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E2DE87829AEDF19008366B0 /* GamePopUp.swift in Sources */,
 				3E35ACDB29AAF21A006C5F80 /* LinearGradient.swift in Sources */,
 				3E3B770429AC471C00A65042 /* CustomNavBar.swift in Sources */,
 				3E3B770029AC37B700A65042 /* PinkButton.swift in Sources */,
@@ -376,10 +386,12 @@
 				3E35ACB529AAD552006C5F80 /* ContentView.swift in Sources */,
 				3E35ACD529AAEC1D006C5F80 /* MainView.swift in Sources */,
 				3E67F1EA29AD8FE8003AF464 /* GameView.swift in Sources */,
+				3E2F5A6129B0433F00520EB3 /* PlayingField.swift in Sources */,
 				3E67F1E829AD3CCD003AF464 /* StrokedCircle.swift in Sources */,
 				3E35ACDF29AAFAD4006C5F80 /* KnewaveFont.swift in Sources */,
 				3E3B770629AC4D3300A65042 /* GamesRulesView.swift in Sources */,
 				3E67F1E129AD146E003AF464 /* Level.swift in Sources */,
+				3E77DA7529B17F0200E33CE3 /* TestView.swift in Sources */,
 				3E35ACB329AAD552006C5F80 /* PazzleGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,7 +515,7 @@
 		};
 		3E35ACBE29AAD554006C5F80 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFA8D2C0750C183191AE8662 /* Pods-PazzleGame.debug.xcconfig */;
+			baseConfigurationReference = A78939E1522B11EBD56339AA /* Pods-PazzleGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -538,7 +550,7 @@
 		};
 		3E35ACBF29AAD554006C5F80 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEFBFA05EC0256B71385498D /* Pods-PazzleGame.release.xcconfig */;
+			baseConfigurationReference = 429ACAB93B58EF1E1846FF9D /* Pods-PazzleGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

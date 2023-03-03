@@ -11,7 +11,7 @@ struct GameView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var levelVM:LevelViewModel
     @StateObject var gameVM:GameViewModel = GameViewModel()
-    @State var gameStatus:GameStatus = .lose
+    //@State var gameStatus:GameStatus = .lose
     @State var showPopUp:Bool = false
     let size = UIScreen.main.bounds.size
     var body: some View {
@@ -23,7 +23,6 @@ struct GameView: View {
                 } navBarItem: {
                     HStack{
                         Button {
-                            gameStatus = .lose
                             showPopUp = true
                         } label: {
                             Image("reload")
@@ -57,8 +56,12 @@ struct GameView: View {
                     RoundedRectangle(cornerRadius: 70)
                         .foregroundColor(.white)
                         .frame(width: 330,height: 330)
+                    
                     CandyFrame()
-                        .frame(width: 340,height: 340)
+                        .frame(width: 350,height: 350)
+                    PlayingField()
+                        .frame(width: 315,height: 315)
+                        .environmentObject(gameVM)
                 }
                 .padding(.bottom,32)
                 ZStack{
@@ -72,6 +75,9 @@ struct GameView: View {
                 Spacer()
             }
             .padding(.horizontal,20)
+            .onChange(of: gameVM.gameStatus) { newValue in
+                showPopUp = true
+            }
             if gameVM.level != nil {
                 popUp(size: size)
                     .opacity(showPopUp ? 1 : 0)
@@ -96,23 +102,23 @@ struct GameView: View {
                 ZStack{
                     
                     VStack{
-                        Image(gameStatus.rawValue)
+                        Image(gameVM.gameStatus.rawValue)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: size.width,height: 347)
-                            .offset(x:gameStatus == .win ? -30 : 0)
+                            .offset(x:gameVM.gameStatus == .win ? -30 : 0)
                         
                         Spacer()
                     }
                     VStack{
                         Spacer()
-                        Text("LEVEL COMPLETED")
+                        Text("LEVEL " + (gameVM.gameStatus == .win ? "COMPLETED" : "FAILED"))
                             .modifier(KnewaveFont(size: 64))
                             .modifier(GlowBorder(lineWidth: 15))
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
                             .lineLimit(2)
-                            .frame(height: 200)
+                            .frame(width: gameVM.gameStatus == .win ? size.width : size.width - 40,height: 200)
                         
                     }
                     
@@ -126,12 +132,14 @@ struct GameView: View {
                         .modifier(GlowBorder(lineWidth: 8))
                         .modifier(StrokedWhiteLabel())
                         .frame(width: size.width - 40,height: 60)
-                    Text("BEST TIME:  " + gameVM.level!.bestTime.timeLeft )
-                        .modifier(KnewaveFont(size: 34))
-                        .foregroundColor(.white)
-                        .modifier(GlowBorder(lineWidth: 8))
-                        .modifier(StrokedWhiteLabel())
-                        .frame(width: size.width - 40,height: 60)
+                    if gameVM.gameStatus == .win {
+                        Text("BEST TIME:  " + gameVM.level!.bestTime.timeLeft )
+                            .modifier(KnewaveFont(size: 34))
+                            .foregroundColor(.white)
+                            .modifier(GlowBorder(lineWidth: 8))
+                            .modifier(StrokedWhiteLabel())
+                            .frame(width: size.width - 40,height: 60)
+                    }
                 }
                 .padding(.bottom,37)
                 
@@ -153,24 +161,25 @@ struct GameView: View {
                         Image("reload")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: gameStatus == .win ? 30 : 45)
+                            .frame(height: gameVM.gameStatus == .win ? 30 : 45)
                             .modifier(StrokedCircle(lineWidth: 5))
-                            .frame(width: gameStatus == .win ? 60 : 90,height: gameStatus == .win ? 60 : 90)
+                            .frame(width: gameVM.gameStatus == .win ? 60 : 90,height: gameVM.gameStatus == .win ? 60 : 90)
+                            .offset(y: gameVM.gameStatus == .lose ? 15 : 0)
                     }
                     
                     Button {
                         dismiss()
                     } label: {
-                        Image(gameStatus == .win ? "backButton" : "backButtonDisabled")
+                        Image(gameVM.gameStatus == .win ? "backButton" : "backButtonDisabled")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(height: 30)
-                            .rotationEffect(.degrees(gameStatus == .win ? 180 : 0))
-                            .modifier(StrokedCircle(lineWidth: 5,isDisabled: gameStatus == .lose))
+                            .rotationEffect(.degrees(gameVM.gameStatus == .win ? 180 : 0))
+                            .modifier(StrokedCircle(lineWidth: 5,isDisabled: gameVM.gameStatus == .lose))
                             .frame(width: 60,height: 60)
                             
                     }
-                    .disabled(gameStatus == .lose)
+                    .disabled(gameVM.gameStatus == .lose)
                     
                 }
                 
@@ -179,6 +188,7 @@ struct GameView: View {
             
         }
     }
+    
 }
 
 struct GameView_Previews: PreviewProvider {

@@ -12,6 +12,7 @@ struct PazzleGameApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchScreen()
+            
         }
     }
 }
