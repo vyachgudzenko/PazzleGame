@@ -11,7 +11,6 @@ struct GameView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var levelVM:LevelViewModel
     @StateObject var gameVM:GameViewModel = GameViewModel()
-    //@State var gameStatus:GameStatus = .lose
     @State var showPopUp:Bool = false
     let size = UIScreen.main.bounds.size
     var body: some View {
@@ -23,7 +22,7 @@ struct GameView: View {
                 } navBarItem: {
                     HStack{
                         Button {
-                            showPopUp = true
+                            gameVM.startOver()
                         } label: {
                             Image("reload")
                                 .resizable()
@@ -77,6 +76,10 @@ struct GameView: View {
             .padding(.horizontal,20)
             .onChange(of: gameVM.gameStatus) { newValue in
                 showPopUp = true
+                if newValue == .win{
+                    levelVM.unblockNextLevel()
+                    levelVM.getLevels()
+                }
             }
             if gameVM.level != nil {
                 popUp(size: size)
@@ -126,7 +129,7 @@ struct GameView: View {
                 .frame(height: 442)
                 .padding(.bottom,24)
                 VStack(spacing:27){
-                    Text("TIME:  " + gameVM.value.timeLeft )
+                    Text("TIME:  " + gameVM.finalTime.timeLeft )
                         .modifier(KnewaveFont(size: 34))
                         .foregroundColor(.white)
                         .modifier(GlowBorder(lineWidth: 8))
@@ -156,7 +159,8 @@ struct GameView: View {
                     }
                     
                     Button {
-                        print("")
+                        gameVM.startOver()
+                        showPopUp = false
                     } label: {
                         Image("reload")
                             .resizable()
@@ -168,7 +172,9 @@ struct GameView: View {
                     }
                     
                     Button {
-                        dismiss()
+                        levelVM.loadNextLevel()
+                        gameVM.loadLevel(level: levelVM.currentLevel!)
+                        showPopUp = false
                     } label: {
                         Image(gameVM.gameStatus == .win ? "backButton" : "backButtonDisabled")
                             .resizable()

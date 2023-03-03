@@ -51,14 +51,20 @@ class LevelViewModel:ObservableObject{
         }
     }
     
-    func unblockLevel(level:Level){
+    func unblockNextLevel(){
+        guard let nextLevel = levels.first(where: { $0.number == currentLevel!.number + 1 }) else {return}
         do{
             let realm = try Realm()
             try realm.write({
-                level.isLocked = false
+                nextLevel.isLocked = false
             })
         } catch{
             print(error.localizedDescription)
         }
+    }
+    
+    func loadNextLevel(){
+        guard let nextLevel = levels.first(where: { $0.number == currentLevel!.number + 1 }) else {return}
+        currentLevel = nextLevel
     }
 }

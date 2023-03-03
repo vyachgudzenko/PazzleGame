@@ -62,6 +62,9 @@ struct LevelsView: View {
             }
             .padding(.horizontal,20)
         }
+        .onAppear(perform: {
+            levelVM.getLevels()
+        })
         .navigationBarHidden(true)
     }
 }
