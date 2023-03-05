@@ -11,7 +11,6 @@
 		3E2DE87629AED76C008366B0 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DE87529AED76C008366B0 /* GameViewModel.swift */; };
 		3E2F5A6129B0433F00520EB3 /* PlayingField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F5A6029B0433F00520EB3 /* PlayingField.swift */; };
 		3E35ACB329AAD552006C5F80 /* PazzleGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35ACB229AAD552006C5F80 /* PazzleGameApp.swift */; };
-		3E35ACB529AAD552006C5F80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35ACB429AAD552006C5F80 /* ContentView.swift */; };
 		3E35ACB729AAD554006C5F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E35ACB629AAD554006C5F80 /* Assets.xcassets */; };
 		3E35ACBA29AAD554006C5F80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E35ACB929AAD554006C5F80 /* Preview Assets.xcassets */; };
 		3E35ACCA29AAE86F006C5F80 /* knewave.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E35ACC929AAE86F006C5F80 /* knewave.ttf */; };
@@ -34,7 +33,6 @@
 		3E67F1E829AD3CCD003AF464 /* StrokedCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1E729AD3CCD003AF464 /* StrokedCircle.swift */; };
 		3E67F1EA29AD8FE8003AF464 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1E929AD8FE8003AF464 /* GameView.swift */; };
 		3E67F1EC29AD92CE003AF464 /* StrokedWhiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67F1EB29AD92CE003AF464 /* StrokedWhiteLabel.swift */; };
-		3E77DA7529B17F0200E33CE3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E77DA7429B17F0200E33CE3 /* TestView.swift */; };
 		D7C96843BB121264D5049D78 /* Pods_PazzleGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB043BA82501C6A0C5C41DB /* Pods_PazzleGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +43,6 @@
 		3E2F5A6029B0433F00520EB3 /* PlayingField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingField.swift; sourceTree = "<group>"; };
 		3E35ACAF29AAD552006C5F80 /* PazzleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PazzleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E35ACB229AAD552006C5F80 /* PazzleGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazzleGameApp.swift; sourceTree = "<group>"; };
-		3E35ACB429AAD552006C5F80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3E35ACB629AAD554006C5F80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E35ACB929AAD554006C5F80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E35ACC929AAE86F006C5F80 /* knewave.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = knewave.ttf; sourceTree = "<group>"; };
@@ -69,7 +66,6 @@
 		3E67F1E729AD3CCD003AF464 /* StrokedCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedCircle.swift; sourceTree = "<group>"; };
 		3E67F1E929AD8FE8003AF464 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		3E67F1EB29AD92CE003AF464 /* StrokedWhiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedWhiteLabel.swift; sourceTree = "<group>"; };
-		3E77DA7429B17F0200E33CE3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		429ACAB93B58EF1E1846FF9D /* Pods-PazzleGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazzleGame.release.xcconfig"; path = "Target Support Files/Pods-PazzleGame/Pods-PazzleGame.release.xcconfig"; sourceTree = "<group>"; };
 		A78939E1522B11EBD56339AA /* Pods-PazzleGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PazzleGame.debug.xcconfig"; path = "Target Support Files/Pods-PazzleGame/Pods-PazzleGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,8 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				3E35ACB229AAD552006C5F80 /* PazzleGameApp.swift */,
-				3E35ACB429AAD552006C5F80 /* ContentView.swift */,
-				3E77DA7429B17F0200E33CE3 /* TestView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -383,7 +377,6 @@
 				3E3B770A29AC573200A65042 /* SettingsView.swift in Sources */,
 				3E35ACD929AAF180006C5F80 /* Color.swift in Sources */,
 				3E67F1E329AD1580003AF464 /* LevelViewModel.swift in Sources */,
-				3E35ACB529AAD552006C5F80 /* ContentView.swift in Sources */,
 				3E35ACD529AAEC1D006C5F80 /* MainView.swift in Sources */,
 				3E67F1EA29AD8FE8003AF464 /* GameView.swift in Sources */,
 				3E2F5A6129B0433F00520EB3 /* PlayingField.swift in Sources */,
@@ -391,7 +384,6 @@
 				3E35ACDF29AAFAD4006C5F80 /* KnewaveFont.swift in Sources */,
 				3E3B770629AC4D3300A65042 /* GamesRulesView.swift in Sources */,
 				3E67F1E129AD146E003AF464 /* Level.swift in Sources */,
-				3E77DA7529B17F0200E33CE3 /* TestView.swift in Sources */,
 				3E35ACB329AAD552006C5F80 /* PazzleGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

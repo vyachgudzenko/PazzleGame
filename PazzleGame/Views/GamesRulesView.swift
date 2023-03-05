@@ -19,9 +19,9 @@ struct GamesRulesView: View {
         GeometryReader { geo in
             ZStack(alignment:.top){
                 BackgroundImage()
-                LinearGradient.pinkGradient
-                    .ignoresSafeArea()
-                    .opacity(0.9)
+                //LinearGradient.pinkGradient
+                //    .ignoresSafeArea()
+                //    .opacity(0.9)
                 VStack(spacing:0){
                     CustomNavBar(backButtonSize: 60) {
                         dismiss()
